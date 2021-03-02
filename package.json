@@ -1,9 +1,9 @@
 {
-  "name": "webd6201-w2021-ice5",
+  "name": "webd6201-w2021-lab2",
   "version": "1.0.0",
-  "description": "Demo Site for Lab 1",
+  "description": "Site for Lab 2",
   "main": "app.js",
-  "repository": "https://github.com/qayyamj/WEBD6201-W2021-ICE5 ",
+  "repository": "https://github.com/qayyamj/WEBD6201-W2021-LAB2.git",
   "author": "Qayyam Jamal <qayyamj@gmail.com>",
   "license": "MIT",
   "dependencies": {
