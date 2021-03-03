@@ -29,7 +29,20 @@
 
     function displayAbout()
     {
+      let img = document.createElement("img");
+      img.src = "../Content/images/qayyam.jpg";
+      img.width = 500;
 
+
+      let mainContent = document.getElementsByTagName("main")[0];
+      mainContent.innerHTML = `<h1> About Us </h1>
+      <h2> Qayyam Jamal </h2>
+      <li> Phone: 647-967-7871 </li>
+      <li> Email: qayyam.jamal@dcmail.ca </li>
+      <li id="resume"> Resume: </li> 
+      `;
+
+      document.getElementsByTagName("main")[0].appendChild(img);
     }
 
     function displayProjects()
