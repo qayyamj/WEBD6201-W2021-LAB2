@@ -8,12 +8,12 @@
 
 ((core) =>
 {
-    // variable for background image
-    let imageUrl = "../Content/images/attack_titan.png";
-
     // Function to display the home page.
     function displayHome()
     {
+      // variable for background image
+      let imageUrl = "../Content/images/attack_titan.png";
+      
       // inject content into the main content of the page
         let mainContent = document.getElementsByTagName("main")[0];
         mainContent.innerHTML = `<h1 id="firstHeading">Welcome to WEBD6201 - Lab 2</h1>
