@@ -27,7 +27,6 @@
         document.getElementsByTagName("main")[0].style.backgroundRepeat = "repeat-x";
     }
 
-    /// Function to display the About page
     function displayAbout()
     {
       let img = document.createElement("img");
@@ -46,25 +45,22 @@
       document.getElementsByTagName("main")[0].appendChild(img);
     }
 
-    /// Function to display Projects Page
     function displayProjects()
     {
 
     }
 
-    /// Function to display Services Page
     function displayServices()
     {
 
     }
 
-    /// Function to validate fullName
     function testFullName()
     {
       let messageArea = $("#messageArea").hide();
       let fullNamePattern = /([A-Z][a-z]{1,25})+(\s|,|-)([A-Z][a-z]{1,25})+(\s|,|-)*/;
 
-        // when focus unset from fullName field
+        
         $("#fullName").on("blur", function()
         {
           if(!fullNamePattern.test($(this).val()))
@@ -79,13 +75,11 @@
         });
     }
 
-    /// Function to validate Contact Number
     function testContactNumber()
     {
       let messageArea = $("#messageArea");
       let contactNumberPattern = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
         
-      // when focus removed from contact number field
         $("#contactNumber").on("blur", function()
         {
           if(!contactNumberPattern.test($(this).val()))
@@ -100,13 +94,11 @@
         });
     }
 
-    /// Function to validate email adrress
     function testEmailAddress()
     {
       let messageArea = $("#messageArea");
       let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
         
-      // When focus removed from the email address field
         $("#emailAddress").on("blur", function()
         {
           if(!emailAddressPattern.test($(this).val()))
@@ -121,7 +113,6 @@
         });
     }
 
-    /// Validate Contact Form
     function formValidation()
     {
       testFullName();
@@ -129,13 +120,11 @@
       testEmailAddress();
     }
 
-    /// Display Contact Page
     function displayContact()
     {
       // form validation
       formValidation();
 
-      /// Event for sent button
         $("#sendButton").on("click", (event)=> 
         {
           if($("#subscribeCheckbox")[0].checked)
@@ -154,24 +143,21 @@
         document.body.style.backgroundImage = "url('../Content/images/attack_titan.png')";
     }
 
-    /// Function to display Login page
     function displayLogin()
     {
       if(sessionStorage.getItem("user"))
       {
-        location.href = "index.html";
+        location.href = "contact-list.html";
       }
 
       let messageArea = $("#messageArea");
       messageArea.hide();
 
-      // Login button clicked
       $("#loginButton").on("click", (event)=> 
       {
         let username = $("#username").val();
         let password = $("#password").val();
         let success = false;
-
 
         $.getJSON("./Data/users.json", function(data) 
         {
@@ -201,7 +187,7 @@
            let nav_user = 
            `<li class="nav-item">
            <span class="navbar-text">
-           ${username.val()}
+           ${username.value()}
            </span>
            </li>`;
 
@@ -209,14 +195,12 @@
          }
          else
          {
-           // display error message
             $("#username").trigger("focus").trigger("select");
             messageArea.show().addClass("alert alert-danger").text("Error: Invalid login information.");
          }
         });
       });
 
-      // Click event for cancel button
       $("#cancelButton").on("click", function()
       {
         // clear the form
@@ -226,19 +210,17 @@
       })
     }
   
-    // Display register page
+
     function displayRegister()
     {
-      // Add div for error message
       $("h1").append(`<div id='ErrorMessage'></div>`);
       
       let messageArea = $("#ErrorMessage").hide();
-      let firstNamePattern = /([A-Z][a-z]{2,})/;
-      let lastNamePattern = /([A-Z][a-z]{2,})/;
-      let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]){8,}*$/;
+      let firstNamePattern = /([A-Z][a-z]{1,25})/;
+      let lastNamePattern = /([A-Z][a-z]{1,25})/;
+      let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{8,})*$/;
       let passwordPattern = /([0-9a-zA-z]{6,})/;
 
-      // Validate Fisrt Name
       $("#firstName").on("blur", function()
       {
         if(!firstNamePattern.test($(this).val()))
@@ -252,7 +234,6 @@
         }
       });
 
-      // Validate Last Name
       $("#lastName").on("blur", function()
       {
         if(!lastNamePattern.test($(this).val()))
@@ -266,7 +247,6 @@
         }
       });
 
-      // Validate Email Address
       $("#emailAddress").on("blur", function()
       {
         if(!emailAddressPattern.test($(this).val()))
@@ -280,7 +260,6 @@
         }
       });
 
-      // Validate Password
       $("#password").on("blur", function()
       {
         if(!passwordPattern.test($(this).val()))
@@ -294,7 +273,6 @@
         }
       });
 
-      // Validate confirmed password
       $("#confirmPassword").on("blur", function()
       {
         if($(this).val() != $("#password").val())
@@ -309,7 +287,6 @@
 
     }
 
-    // Load web page
     function Start()
     {
         console.log("App Started...");
