@@ -85,7 +85,7 @@
           if(!contactNumberPattern.test($(this).val()))
           {
             $(this).trigger("focus").trigger("select");
-            messageArea.show().addClass("alert alert-danger").text("Please enter a valid Contact Number. Country code and area code are both optional");
+            messageArea.show().addClass("alert alert-danger").text("Please enter a valid Contact Number.");
           }
           else
           {
@@ -181,7 +181,17 @@
            messageArea.removeAttr("class").hide();
 
            // go to secure area
-           location.href = "contact-list.html";
+           location.href = "index.html";
+
+           // add username between contact us and login/logout
+           let nav_user = 
+           `<li class="nav-item">
+           <span class="navbar-text">
+           ${username.value()}
+           </span>
+           </li>`;
+
+           $("nav_user").insertAfter("#contact");
          }
          else
          {
@@ -203,6 +213,77 @@
 
     function displayRegister()
     {
+      $("h1").append(`<div id='ErrorMessage'></div>`);
+      
+      let messageArea = $("#ErrorMessage").hide();
+      let firstNamePattern = /([A-Z][a-z]{1,25})/;
+      let lastNamePattern = /([A-Z][a-z]{1,25})/;
+      let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{8,})*$/;
+      let passwordPattern = /([0-9a-zA-z]{6,})/;
+
+      $("#firstName").on("blur", function()
+      {
+        if(!firstNamePattern.test($(this).val()))
+        {
+          $(this).trigger("focus").trigger("select");
+          messageArea.show().addClass("alert alert-danger").text("Please enter a valid First Name. First Name must be capitalized and at least 2 characters long.");
+        }
+        else
+        {
+          messageArea.removeAttr("class").hide();
+        }
+      });
+
+      $("#lastName").on("blur", function()
+      {
+        if(!lastNamePattern.test($(this).val()))
+        {
+          $(this).trigger("focus").trigger("select");
+          messageArea.show().addClass("alert alert-danger").text("Please enter a valid Last Name. Last Name must be capitalized and at least 2 characters long.");
+        }
+        else
+        {
+          messageArea.removeAttr("class").hide();
+        }
+      });
+
+      $("#emailAddress").on("blur", function()
+      {
+        if(!emailAddressPattern.test($(this).val()))
+        {
+          $(this).trigger("focus").trigger("select");
+          messageArea.show().addClass("alert alert-danger").text("Please enter a valid Email Address. Must be at least 8 characters and contain '@'.");
+        }
+        else
+        {
+          messageArea.removeAttr("class").hide();
+        }
+      });
+
+      $("#password").on("blur", function()
+      {
+        if(!passwordPattern.test($(this).val()))
+        {
+          $(this).trigger("focus").trigger("select");
+          messageArea.show().addClass("alert alert-danger").text("Password must be alphanumeric and a minimum of 6 characters.");
+        }
+        else
+        {
+          messageArea.removeAttr("class").hide();
+        }
+      });
+
+      $("#confirmPassword").on("blur", function()
+      {
+        if($(this).val() != $("#password").val())
+        {
+          messageArea.show().addClass("alert alert-danger").text("The passwords you entered do not match.");
+        }
+        else
+        {
+          messageArea.removeAttr("class").hide();
+        }
+      });
 
     }
 
@@ -226,12 +307,6 @@
             break;
           case "Contact":
               displayContact();
-            break;
-          case "Contact-List":
-            displayContactList();
-            break;
-          case "Edit":
-            displayEdit();
             break;
           case "Login":
             displayLogin();
