@@ -195,12 +195,10 @@
            // add username between contact us and login/logout
            let nav_user = 
            `<li class="nav-item">
-           <span class="navbar-text">
-           ${username.value()}
-           </span>
+           <span class="navbar-text">${newUser.username}</span>
            </li>`;
 
-           $("nav_user").insertAfter($("#contact"));
+           $(nav_user).insertAfter($("#contact"));
          }
          else
          {
