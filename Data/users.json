@@ -1,7 +1,0 @@
-{
-    "users":
-    [
-        {"UserName": "ironman", "Password": "avengers", "EmailAddress": "tony.stark@example.com", "FirstName": "Tony", "LastName": "Stark"},
-        {"UserName": "captainamerica", "Password": "avengers", "EmailAddress": "steve.rogers@example.com", "FirstName": "Steve", "LastName": "Rogers"}
-    ]
-}

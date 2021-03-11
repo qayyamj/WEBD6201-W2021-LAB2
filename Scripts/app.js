@@ -305,7 +305,11 @@
         // prevent default functionality
         event.preventDefault();
 
-        let newUser = new core.User();
+        let user = new core.User(firstName.value, lastName.value, emailAddress.value, userName.value, password.value);
+
+        console.log(user);
+
+        document.forms[0].reset();
       });
 
     }
