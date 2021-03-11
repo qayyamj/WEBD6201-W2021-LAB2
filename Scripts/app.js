@@ -299,6 +299,15 @@
         }
       });
 
+      // Register button click event
+      $("#registerButton").on("click", function(event)
+      {
+        // prevent default functionality
+        event.preventDefault();
+
+        
+      });
+
     }
 
     function Start()
