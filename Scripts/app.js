@@ -305,7 +305,7 @@
         // prevent default functionality
         event.preventDefault();
 
-        
+        let newUser = new core.User();
       });
 
     }
