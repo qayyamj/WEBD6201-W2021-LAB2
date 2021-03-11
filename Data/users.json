@@ -1,8 +1,7 @@
 {
     "users":
     [
-        {"UserName": "admin", "Password": "123456", "EmailAddress":"admin@example.com", "DisplayName": "Admin"},
-        {"UserName": "john", "Password": "123456", "EmailAddress":"john@example.com", "DisplayName": "John Smith"},
-        {"UserName": "jane", "Password": "123456", "EmailAddress":"jane@example.com", "DisplayName": "Jane Smith"}
+        {"UserName": "ironman", "Password": "avengers", "EmailAddress": "tony.stark@example.com", "FirstName": "Tony", "LastName": "Stark"},
+        {"UserName": "captainamerica", "Password": "avengers", "EmailAddress": "steve.rogers@example.com", "FirstName": "Steve", "LastName": "Rogers"}
     ]
 }

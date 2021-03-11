@@ -5,14 +5,24 @@
   class User 
   {
     // getters and setters
-    get DisplayName() 
+    get FirstName()
     {
-      return this.m_displayName;
+      return this.m_firstName;
     }
-  
-    set DisplayName(value) 
+
+    set FirstName(value)
     {
-      this.m_displayName = value;
+      this.m_firstName = value;
+    }
+
+    get LastName()
+    {
+      return this.m_lastName;
+    }
+
+    set LastName(value)
+    {
+      this.m_lastName = value;
     }
   
     get EmailAddress() 
@@ -49,14 +59,16 @@
 
     /**
      * Creates an instance of User.
-     * @param {string} [displayName=""]
+     * @param {string} [firstName=""]
+     * @param {string} [lastName=""]
      * @param {string} [emailAddress=""]
      * @param {string} [username=""]
      * @param {string} [password=""]
      */
-    constructor(displayName = "", emailAddress = "", username = "", password ="") 
+    constructor(firstName = "", lastName = "", emailAddress = "", username = "", password ="") 
     {
-      this.DisplayName = displayName;
+      this.FirstName = firstName;
+      this.LastName = lastName;
       this.EmailAddress = emailAddress;
       this.UserName = username;
       this.Password = password;
@@ -71,7 +83,7 @@
      */
     toString() 
     {
-      return `Display Name     : ${this.FullName} \nEmail Address : ${this.EmailAddress} \nUserName : ${this.UserName}`;
+      return `First Name     : ${this.FirstName} \n Last Name : ${this.LastName} \n Email Address : ${this.EmailAddress} \nUserName : ${this.UserName}`;
     }
 
     /**
@@ -82,7 +94,8 @@
     toJSON()
     {
       return {
-        "DisplayName": this.DisplayName,
+        "FirstName": this.FirstName,
+        "LastName": this.LastName,
         "EmailAddress": this.EmailAddress,
         "UserName": this.UserName
       }
@@ -95,7 +108,8 @@
      */
     fromJSON(JSONData)
     {
-      this.DisplayName = JSONData.DisplayName;
+      this.FirstName = JSONData.FirstName;
+      this.LastName = JSONData.LastName;
       this.EmailAddress = JSONData.EmailAddress;
       this.UserName = JSONData.UserName;
       this.Password = JSONData.Password;
@@ -108,9 +122,9 @@
      */
     serialize()
     {
-      if(this.DisplayName !== "" && this.EmailAddress !== "" && this.UserName !== "")
+      if(this.FirstName !== "" && this.LastName !== "" && this.EmailAddress !== "" && this.UserName !== "")
       {
-        return `${this.DisplayName},${this.EmailAddress},${this.UserName}`;
+        return `${this.FirstName},${this.LastName},${this.EmailAddress},${this.UserName}`;
       }
       else 
       {
@@ -128,9 +142,10 @@
     deserialize(data)
     {
       let propertyArray = data.split(",");
-      this.DisplayName = propertyArray[0];
-      this.EmailAddress = propertyArray[1];
-      this.UserName = propertyArray[2];
+      this.FirstName = propertyArray[0];
+      this.LastName = propertyArray[1];
+      this.EmailAddress = propertyArray[2];
+      this.UserName = propertyArray[3];
     }
   }
   
