@@ -227,7 +227,6 @@
       let messageArea = $("#ErrorMessage").hide();
       let firstNamePattern = /([A-Z][a-z]{2,})/;
       let lastNamePattern = /([A-Z][a-z]{2,})/;
-      //let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})*$/;
       let emailAddressPattern = /^([[a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)*$/;
       let passwordPattern = /([0-9a-zA-z]{6,})/;
 
