@@ -1,7 +1,7 @@
 /* custom JavaScript goes here */
 /* Name:      Qayyam Jamal
  * StudentID: 100713267
- * Date:      March 5, 2021
+ * Date:      March 7, 2021
  */
 
 "use strict";
@@ -193,9 +193,8 @@
            location.href = "index.html";
 
            // add username between contact us and login/logout
-           let nav_user = 
-           `<li class="nav-item">
-           <span class="navbar-text">${newUser.username}</span>
+           let nav_user = `<li class="nav-item">
+           <span class="navbar-text">${newUser.UserName}</span>
            </li>`;
 
            $(nav_user).insertAfter($("#contact"));
