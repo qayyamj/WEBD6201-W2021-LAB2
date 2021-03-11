@@ -1,0 +1,20 @@
+{
+    "users":
+    [
+        {
+            "FirstName": "Tony",
+            "LastName": "Stark",
+            "UserName": "ironman",
+            "EmailAddress": "tony.stark@example.com",
+            "Password": "avengers"
+        },
+
+        {
+            "FirstName": "Steve",
+            "LastName": "Rogers",
+            "UserName": "captainamerica",
+            "EmailAddress": "steve.rogers@example.com",
+            "Password": "avengers"
+        }
+    ]
+}
