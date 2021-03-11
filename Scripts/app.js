@@ -27,6 +27,7 @@
         document.getElementsByTagName("main")[0].style.backgroundRepeat = "repeat-x";
     }
 
+    // function to display About Page
     function displayAbout()
     {
       let img = document.createElement("img");
@@ -45,16 +46,19 @@
       document.getElementsByTagName("main")[0].appendChild(img);
     }
 
+    // Display Projects page
     function displayProjects()
     {
 
     }
 
+    // Display Services pages
     function displayServices()
     {
 
     }
 
+    // Validate Full Name
     function testFullName()
     {
       let messageArea = $("#messageArea").hide();
@@ -75,6 +79,7 @@
         });
     }
 
+    // Validate Contact Number
     function testContactNumber()
     {
       let messageArea = $("#messageArea");
@@ -94,6 +99,7 @@
         });
     }
 
+    // Validate Email Address
     function testEmailAddress()
     {
       let messageArea = $("#messageArea");
@@ -113,6 +119,7 @@
         });
     }
 
+    // Form Validation for Contact Page
     function formValidation()
     {
       testFullName();
@@ -120,6 +127,7 @@
       testEmailAddress();
     }
 
+    // Display Contact Page
     function displayContact()
     {
       // form validation
@@ -143,11 +151,12 @@
         document.body.style.backgroundImage = "url('../Content/images/attack_titan.png')";
     }
 
+    // Display Login Page
     function displayLogin()
     {
       if(sessionStorage.getItem("user"))
       {
-        location.href = "contact-list.html";
+        location.href = "index.html";
       }
 
       let messageArea = $("#messageArea");
@@ -191,7 +200,7 @@
            </span>
            </li>`;
 
-           $("nav_user").insertAfter("#contact");
+           $("nav_user").insertAfter($("#contact"));
          }
          else
          {
@@ -210,17 +219,19 @@
       })
     }
   
-
+    // Display Register Page
     function displayRegister()
     {
       $("h1").append(`<div id='ErrorMessage'></div>`);
       
       let messageArea = $("#ErrorMessage").hide();
-      let firstNamePattern = /([A-Z][a-z]{1,25})/;
-      let lastNamePattern = /([A-Z][a-z]{1,25})/;
-      let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{8,})*$/;
+      let firstNamePattern = /([A-Z][a-z]{2,})/;
+      let lastNamePattern = /([A-Z][a-z]{2,})/;
+      //let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})*$/;
+      let emailAddressPattern = /^([[a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)*$/;
       let passwordPattern = /([0-9a-zA-z]{6,})/;
 
+      // Validate First Name
       $("#firstName").on("blur", function()
       {
         if(!firstNamePattern.test($(this).val()))
@@ -234,6 +245,7 @@
         }
       });
 
+      // Validate Last Name
       $("#lastName").on("blur", function()
       {
         if(!lastNamePattern.test($(this).val()))
@@ -247,6 +259,7 @@
         }
       });
 
+      // Validate Email Address
       $("#emailAddress").on("blur", function()
       {
         if(!emailAddressPattern.test($(this).val()))
@@ -260,6 +273,7 @@
         }
       });
 
+      // Validate Password
       $("#password").on("blur", function()
       {
         if(!passwordPattern.test($(this).val()))
@@ -273,6 +287,7 @@
         }
       });
 
+      // Validate Confirmed Password
       $("#confirmPassword").on("blur", function()
       {
         if($(this).val() != $("#password").val())
