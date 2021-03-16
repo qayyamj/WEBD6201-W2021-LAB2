@@ -219,6 +219,7 @@
     // Display Register Page
     function displayRegister()
     {
+      // Create error message div
       $("h1").append(`<div id='ErrorMessage'></div>`);
       
       let messageArea = $("#ErrorMessage").hide();
